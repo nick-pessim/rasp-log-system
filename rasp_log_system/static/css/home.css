@@ -1,0 +1,79 @@
+@font-face {
+   font-family: 'Open Sans Light';
+   font-style: normal;
+   font-weight: 300;
+   src:url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRa1RVmPjeKy21_GQJaLlJI.woff) format('woff');
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: url(img_login/bkg.jpg);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: auto;
+  font-family: "Open Sans Light";
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+  display:block;
+}
+
+.heather{
+  background-color: #BD1143;
+  width: 100%;
+  height: 50px;
+  top: 0%;
+  left: 0%;
+  position: absolute;
+}
+
+.heather img{
+  cursor: pointer;
+  width: 210px;
+  height: 50px;
+  float: left;
+}
+
+.searchbox{
+  width: 360px;
+  height: 50px;
+  position: absolute;
+  left: 332px;
+  top: 0%;
+  background-color: #D71246;
+}
+
+.options{
+  height: 100%;
+  border-right: 1px solid #ddd;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  top: 50px;
+  background: #fff;
+  width: 72px;
+}
+
+.suboptions{
+  background: #f7f7f7;
+  width: 258px;
+  left: 73px;
+  position: fixed !important;
+  top: 50px;
+  padding: 10px 0px 10px 0 !important;
+  bottom: 0;
+  border-right: 1px solid #ddd;
+  height: calc(100% - 50px);
+}
+
+.infodisplay{
+  position: fixed;
+  background-color: #fff;
+  width: calc(100% - 332px);
+  height: calc(100% - 50px);
+  top: 50px;
+  left: 332px;
+}

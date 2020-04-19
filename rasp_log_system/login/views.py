@@ -1,10 +1,17 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect, HttpResponse
 from .models import Login
+#cryptography
+from cryptography.fernet import Fernet
 
 # Create your views here.
-def login(request, msg_error=''):
-    try:
-        id_failed = int(msg_error[len(msg_error)-1])
-    except:
-        id_failed = 0
-    return render(request, 'login.html', {'id_failed':id_failed})
+def login(request):
+    return render(request, 'login.html', {})
+
+def logging(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    
+    l = Login.login(username, password)
+
+    return HttpResponse(str(l))

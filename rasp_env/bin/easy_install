@@ -1,4 +1,4 @@
-#!/media/38cf8f94-c31c-41d7-9cd4-cf4128215338/projetos/python/django/rasp_log_system/rasp_env/bin/python3
+#!/home/zvs-serv/rasp-log-system/rasp_env/bin/python3.6
 
 # -*- coding: utf-8 -*-
 import re
@@ -7,5 +7,5 @@ import sys
 from setuptools.command.easy_install import main
 
 if __name__ == '__main__':
-    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
     sys.exit(main())

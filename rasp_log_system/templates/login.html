@@ -4,9 +4,26 @@
   <head>
     <title>Login - RLS</title>
      <meta charset="utf-8" />
-     <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
   </head>
   <body>
+    <div class="background">
+      <img src="{% static 'img/login/cpd-logo.jpg' %}" />
+    </div>
+    <form action="logging/" class="loginbox" method="post">{% csrf_token %}
+      <h1>Login</h1>
+      <div class="inputbox">
+	<label style="font-size: 13px;">Username</label><br/>
+	<input id="username" class="txtbox" name="username" value="" type="text">
+      </div>
+      <div class="inputbox" style="padding-top:10px;">
+        <label style="font-size: 13px;">Password</label><br/>
+        <input id="password" class="txtbox" name="password" value="" type="password">
+      </div>
+      <div style="padding-top: 10px;">
+      	<button class="logbtn" type="submit">Login</button>
+      </div>
+    </form>
     
   </body>
 </html>
