@@ -23,6 +23,12 @@ def logging(request):
 
     return HttpResponseRedirect('/home/')
 
+def logout(request):
+    l = get_logged_user(request)
+    if isinstance(l, Login):
+        l.logout()
+    return HttpResponseRedirect('/')
+
 #Funções para sempre serem copiadas
 def visitor_ip_address(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')

@@ -1,0 +1,187 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <title>Home - RLS</title>
+     <meta charset="utf-8" />
+     <link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}" />
+  </head>
+  <body>
+    <div class="heather">
+      <img src="{% static 'img/login/cpd-logo.jpg' %}" />
+      <div class=searchbox>
+      </div>
+    </div>
+    <div class="optionsbox">
+      <!--Novo botão principal-->
+      <a href="/home/" style="text-decoration: none; color: #000;">
+      	<div class="option">
+	  <img src="{% static 'img/home/raspberry.png' %}" />
+          <label>Home</label>
+	  {% if btn_first == 1  %}
+	    <!--Botão selecionado-->
+	    <div class="optionselect">
+	      <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+	    </div>
+	  {% endif  %}
+        </div>
+      </a>
+      <!--Novo botão principal-->
+      <a href="/connections/" style="text-decoration: none; color: #000;">
+        <div class="option">
+          <img src="{% static 'img/home/tomada.png' %}" />
+          <label>Conexões</label>
+          {% if btn_first == 2  %}
+	    <!--Botão selecionado-->
+            <div class="optionselect">
+              <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+            </div>
+          {% endif  %}
+        </div>
+      </a>
+      <!--Novo botão principal-->
+      <a href="/add/" style="text-decoration: none; color: #000;">
+        <div class="option">
+          <img src="{% static 'img/home/sinal_mais.png' %}" />
+          <label>Adicionar</label>
+          {% if btn_first == 3  %}
+	    <!--Botão selecionado-->
+            <div class="optionselect">
+              <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+            </div>
+	    {% endif %}
+        </div>
+      </a>
+      <a href="/logout/" style="text-decoration: none; color: #000;">
+        <div class="option">
+          <img src="{% static 'img/home/logout.png' %}" />
+          <label>Sair</label>
+        </div>
+      </a>
+    </div>
+    <div class="suboptionsbox">
+      <div class="suboptiontitle">
+        <label>Dispositivos</label>
+      </div>
+      {% for device in devices %}
+        <div class="suboption">
+          <label>{{device.nome}}</label>
+        </div>
+      {% endfor %}
+      </div>
+      <div class="infodisplay">
+        <!--Complete empty space-->
+        <div style="height: 10px; width:1034; background-color: #f5f5f5; position: absolut;"></div>
+      	<div class="infodisplaytitle">
+          <label>Adicionar dispositivo</label>
+      	</div>
+	<form class="infodisplayform" method="post" action="device/">{% csrf_token %}
+	  <div class="infodisplayattribute">
+	    <label>Nome:</label><br />
+            <input type="text" name="nome" id="nome" /><br />
+	  </div>
+	  <div class="infodisplayattribute">
+	    <label>IP:</label><br />
+            <input type="text" name="ip" id="ip" /><br />
+	  </div>
+	  <div class="infodisplayattribute">
+	    <label>Versão do SNMP:</label><br />
+            <input type="text" name="vers_snmp" id="vers_snmp" /><br />
+	  </div>
+	  <div class="infodisplayattribute">
+	    <label>Community:</label><br />
+            <input type="text" name="community" id="community" /><br />
+          </div>
+	  <div style="padding-top: 64px;">
+	    <input type="submit" value="Adicionar" name="sendbtn" id="sendbtn" />
+          </div>
+	</form>
+      <div class="infodisplayfeedback">
+        <div class="infodisplayfeedbackattribute">
+          <label class="fixed_input">Nome:</label>
+          <label id=nome_disp name=nome_disp class="json_input">-</label>
+        </div><br>
+        <div class="infodisplayfeedbackattribute">
+          <label class="fixed_input">Instituição:</label>
+	  <label id=inst_disp name=inst_disp class="json_input">-</label>
+        </div><br>
+        <div class="infodisplayfeedbackattribute">
+          <label class="fixed_input">Sistema:</label>
+	  <label id=syst_disp name=syst_disp class="json_input">-</label>
+        </div><br>
+        <div class="infodisplayfeedbackattribute">
+          <label class="fixed_input">MAC-address:</label>
+	  <label id=mac_disp name=mac_disp class="json_input">-</label>
+        </div><br>
+        <div class="infodisplayfeedbackattribute">
+          <label class="fixed_input">Interfaces:</label>
+	  <label id=interf_disp name=interf_disp class="json_input">-</label>
+        </div><br>
+        <div class="infodisplayfeedbackattribute">
+	  <label class="fixed_input">Vlan:</label>
+  	  <label id=vlan_disp name=vlan_disp class="json_input">-</label>
+        </div><br>
+	<input type="button" value="Testar" name="testbtn" id="testbtn" style="float: right;"/>
+      </div>
+      <!--Atualizar informações-->
+      <script>
+        var nome = document.getElementById('nome').value;
+        var ip = document.getElementById('ip').value;
+        var vers_snmp = document.getElementById('vers_snmp').value;
+        var community = document.getElementById('community').value;
+
+        //Setar um default para ws
+        if(document.getElementById('nome').value == "")
+          nome = "0";
+        if(document.getElementById('ip').value == "")
+          ip = "0";
+        if(document.getElementById('vers_snmp').value == "")
+          vers_snmp = "0";
+        if(document.getElementById('community').value == "")
+          community = "0";
+	
+        var raspSocket = new WebSocket(
+          'ws://' + window.location.host
+          + '/ws/add/'
+          + nome
+          + '/'
+          + ip
+          + '/'
+          + vers_snmp
+          + '/'
+          + community
+          + '/'
+        );
+
+        raspSocket.onmessage = function(e) {
+          var data = JSON.parse(e.data);
+	  document.querySelector('#nome_disp').innerHTML = data.nome_snmp;
+	  document.querySelector('#inst_disp').innerHTML = data.inst_snmp;
+	  document.querySelector('#syst_disp').innerHTML = data.syst_snmp;
+          document.querySelector('#mac_disp').innerHTML = data.mac_snmp;
+          document.querySelector('#interf_disp').innerHTML = data.interf_snmp;
+          document.querySelector('#vlan_disp').innerHTML = data.vlan_snmp;
+        };
+
+        raspSocket.onclose = function(e) {
+            console.error('Erro na socket');
+        };  
+
+        document.querySelector('#testbtn').onclick = function(e) {
+            var nome = document.querySelector('#nome').value;
+	    var ip = document.querySelector('#ip').value;
+  	    var vers_snmp = document.querySelector('#vers_snmp').value;
+	    var community = document.querySelector('#community').value;
+
+
+            raspSocket.send(JSON.stringify({
+              'nome': nome,
+	      'ip': ip,
+	      'vers_snmp': vers_snmp,
+	      'community': community,
+            }));
+        };
+      </script>
+    </div>
+  </body>
+</html>

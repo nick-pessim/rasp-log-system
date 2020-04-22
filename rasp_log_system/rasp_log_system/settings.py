@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'login',
     'home',
+    'channels',
+    'add',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +75,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'rasp_log_system.wsgi.application'
+ASGI_APPLICATION = 'rasp_log_system.routing.application'
 
 
 # Database

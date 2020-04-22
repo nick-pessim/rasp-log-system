@@ -13,41 +13,62 @@
       </div>
     </div>
     <div class="optionsbox">
-      <div class="option">
-	<img src="{% static 'img/home/raspberry.png' %}" />
-        <label>Home</label>
-	<!-- SELEÇÃO DE OPÇÃO
-	<div class="optionselect">
-	  <div style="width: 4px; height: 60px; background-color: #BD1143;" />
-	</div>
-	-->
-      </div>
-      <div class="option">
-        <img src="{% static 'img/home/tomada.png' %}" />
-        <label>Conexões</label>
-        <!-- SELEÇÃO DE OPÇÃO
-        <div class="optionselect">
-          <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+      <!--Novo botão principal-->
+      <a href="/home/" style="text-decoration: none; color: #000;">
+      	<div class="option">
+	  <img src="{% static 'img/home/raspberry.png' %}" />
+          <label>Home</label>
+	  {% if btn_first == 1  %}
+	    <!--Botão selecionado-->
+	    <div class="optionselect">
+	      <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+	    </div>
+	  {% endif  %}
         </div>
-        -->
-      </div>
-      <div class="option">
-        <img src="{% static 'img/home/sinal_mais.png' %}" />
-        <label>Adicionar</label>
-        <!-- SELEÇÃO DE OPÇÃO
-        <div class="optionselect">
-          <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+      </a>
+      <!--Novo botão principal-->
+      <a href="/connections/" style="text-decoration: none; color: #000;">
+        <div class="option">
+          <img src="{% static 'img/home/tomada.png' %}" />
+          <label>Conexões</label>
+          {% if btn_first == 2  %}
+	    <!--Botão selecionado-->
+            <div class="optionselect">
+              <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+            </div>
+          {% endif  %}
         </div>
-        -->
-      </div>
+      </a>
+      <!--Novo botão principal-->
+      <a href="/add/" style="text-decoration: none; color: #000;">
+        <div class="option">
+          <img src="{% static 'img/home/sinal_mais.png' %}" />
+          <label>Adicionar</label>
+          {% if btn_first == 3  %}
+	    <!--Botão selecionado-->
+            <div class="optionselect">
+              <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+            </div>
+	    {% endif %}
+        </div>
+      </a>
+      <!--Novo botão principal-->
+      <a href="/logout/" style="text-decoration: none; color: #000;">
+        <div class="option">
+          <img src="{% static 'img/home/logout.png' %}" />
+          <label>Sair</label>
+        </div>
+      </a>
     </div>
     <div class="suboptionsbox">
       <div class="suboptiontitle">
         <label>Dispositivos</label>
       </div>
-      <div class="suboption">
-	<label>Subopção</label>
-      </div>
+      {% for device in devices %}
+        <div class="suboption">
+	  <label>{{device.nome}}</label>
+        </div>
+      {% endfor %}
     </div>
     <div class="infodisplay">
       <!--Complete empty space-->
