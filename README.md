@@ -1,6 +1,6 @@
 # Rasp Log System (RLS)
 
-![Rasp-logo](https://raw.github.com/nick-pessim/rasp-log-system/master/raspberry-pi-logo.svg | width = 250)
+![Rasp-logo](https://raw.github.com/nick-pessim/rasp-log-system/master/logo.png)
 
 Este repositório tem como objetivo construir uma interface online na linguagem python utilizando o Django para acesso http de uma raspberry-pi, via webserver em linux, e retirar informações assim como fazer com que ela edite configurações locais. As requisições serão feitas via snmp.
 
