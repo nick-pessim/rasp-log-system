@@ -18,6 +18,7 @@ from django.urls import path
 from login.views import login, logging, logout
 from home.views import menu
 from add.views import add, add_device
+from tcp_dump.views import dump, download_dump_file
 
 
 urlpatterns = [
@@ -27,5 +28,8 @@ urlpatterns = [
     path('home/', menu),
     path('add/', add),
     path('add/device/', add_device),
+    path('tcp-dump/', dump),
+    path('tcp-dump/<str:dev_name>/', dump),
+    path('tcp-dump/download/<str:dump_file>/', download_dump_file),
     path('', login),
 ]

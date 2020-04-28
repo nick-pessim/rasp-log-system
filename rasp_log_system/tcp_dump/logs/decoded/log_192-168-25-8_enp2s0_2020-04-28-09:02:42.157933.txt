@@ -1,0 +1,84 @@
+09:02:49.366834 IP Broadcom.Home > all-systems.mcast.net: igmp query v2 [max resp time 10]
+09:02:49.368284 IP6 _gateway > ip6-allnodes: HBH ICMP6, multicast listener query v2 [gaddr ::], length 28
+09:02:49.373000 IP6 fe80::223:8bff:fec0:be02 > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:02:49.378377 IP6 fe80::10b3:9fff:fe8a:828d > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:02:49.538564 IP6 zvs-note > ff02::16: HBH ICMP6, multicast listener report v2, 3 group record(s), length 68
+09:02:49.544917 IP6 fe80::4a49:c7ff:fe0f:5c28 > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:02:49.632966 IP unknown > 224.0.0.251: igmp v2 report 224.0.0.251
+09:02:51.573837 IP unknown.mdns > 224.0.0.251.mdns: 0 PTR (QM)? _rc._tcp.local. (32)
+09:02:51.594667 IP unknown.mdns > 224.0.0.251.mdns: 0 PTR (QM)? _rc._tcp.local. (32)
+09:02:51.827347 IP unknown.mdns > 224.0.0.251.mdns: 0 PTR (QM)? _rc._tcp.local. (32)
+09:02:51.827536 IP unknown.mdns > 224.0.0.251.mdns: 0 PTR (QM)? _rc._tcp.local. (32)
+09:02:51.854123 IP unknown.mdns > 224.0.0.251.mdns: 0 PTR (QM)? _rc._tcp.local. (32)
+09:02:51.855550 IP unknown.mdns > 224.0.0.251.mdns: 0 PTR (QM)? _rc._tcp.local. (32)
+09:02:52.091534 IP unknown.mdns > 224.0.0.251.mdns: 0 [1n] ANY (QM)? 192-168-25-7.local. (52)
+09:02:54.121453 IP6 fe80::dace:3aff:fee2:40d1 > ff02::16: HBH ICMP6, multicast listener report v2, 1 group record(s), length 28
+09:02:54.571657 IP6 fe80::dace:3aff:fee2:40d1 > ff02::16: HBH ICMP6, multicast listener report v2, 1 group record(s), length 28
+09:02:54.612752 IP unknown.mdns > 224.0.0.251.mdns: 0 [2q] [2n] ANY (QU)? Android.local. ANY (QU)? Android.local. (81)
+09:02:54.613018 IP6 fe80::dace:3aff:fee2:40d1.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QU)? Android.local. ANY (QU)? Android.local. (81)
+09:02:54.863177 IP unknown.mdns > 224.0.0.251.mdns: 0 [2q] [2n] ANY (QM)? Android.local. ANY (QM)? Android.local. (81)
+09:02:54.863341 IP6 fe80::dace:3aff:fee2:40d1.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? Android.local. ANY (QM)? Android.local. (81)
+09:02:55.116994 IP unknown.mdns > 224.0.0.251.mdns: 0 [2q] [2n] ANY (QM)? Android.local. ANY (QM)? Android.local. (81)
+09:02:55.117181 IP6 fe80::dace:3aff:fee2:40d1.mdns > ff02::fb.mdns: 0 [2q] [2n] ANY (QM)? Android.local. ANY (QM)? Android.local. (81)
+09:02:55.366783 IP unknown.mdns > 224.0.0.251.mdns: 0*- [0q] 4/0/3 (Cache flush) PTR Android.local., (Cache flush) PTR Android.local., (Cache flush) A 192.168.25.7, (Cache flush) AAAA fe80::dace:3aff:fee2:40d1 (246)
+09:02:55.366973 IP6 fe80::dace:3aff:fee2:40d1.mdns > ff02::fb.mdns: 0*- [0q] 4/0/3 (Cache flush) PTR Android.local., (Cache flush) PTR Android.local., (Cache flush) A 192.168.25.7, (Cache flush) AAAA fe80::dace:3aff:fee2:40d1 (246)
+09:02:56.648301 ARP, Request who-has DESKTOP-S4P6SR4 tell Broadcom.Home, length 46
+09:02:56.842994 IP unknown.mdns > 224.0.0.251.mdns: 0*- [0q] 4/0/3 (Cache flush) PTR Android.local., (Cache flush) PTR Android.local., (Cache flush) A 192.168.25.7, (Cache flush) AAAA fe80::dace:3aff:fee2:40d1 (246)
+09:02:56.843177 IP6 fe80::dace:3aff:fee2:40d1.mdns > ff02::fb.mdns: 0*- [0q] 4/0/3 (Cache flush) PTR Android.local., (Cache flush) PTR Android.local., (Cache flush) A 192.168.25.7, (Cache flush) AAAA fe80::dace:3aff:fee2:40d1 (246)
+09:02:57.650038 ARP, Request who-has DESKTOP-S4P6SR4 tell Broadcom.Home, length 46
+09:02:58.651885 ARP, Request who-has DESKTOP-S4P6SR4 tell Broadcom.Home, length 46
+09:02:59.379185 IP Broadcom.Home > all-systems.mcast.net: igmp query v2 [max resp time 10]
+09:02:59.380777 IP6 _gateway > ip6-allnodes: HBH ICMP6, multicast listener query v2 [gaddr ::], length 28
+09:02:59.388284 IP6 fe80::10b3:9fff:fe8a:828d > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:02:59.388832 IP6 fe80::223:8bff:fec0:be02 > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:02:59.581319 IP6 zvs-note > ff02::16: HBH ICMP6, multicast listener report v2, 3 group record(s), length 68
+09:02:59.583883 IP6 fe80::4a49:c7ff:fe0f:5c28 > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:00.260971 IP unknown > 224.0.0.251: igmp v2 report 224.0.0.251
+09:03:09.391360 IP Broadcom.Home > all-systems.mcast.net: igmp query v2 [max resp time 10]
+09:03:09.392995 IP6 _gateway > ip6-allnodes: HBH ICMP6, multicast listener query v2 [gaddr ::], length 28
+09:03:09.400981 IP6 fe80::223:8bff:fec0:be02 > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:09.403295 IP6 fe80::10b3:9fff:fe8a:828d > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:09.607734 IP6 zvs-note > ff02::16: HBH ICMP6, multicast listener report v2, 3 group record(s), length 68
+09:03:09.621728 IP6 fe80::4a49:c7ff:fe0f:5c28 > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:09.692973 IP unknown > 224.0.0.251: igmp v2 report 224.0.0.251
+09:03:12.390729 IP6 _gateway > ip6-allnodes: ICMP6, router advertisement, length 112
+09:03:12.474733 IP6 zvs-note > ff02::16: HBH ICMP6, multicast listener report v2, 3 group record(s), length 68
+09:03:13.388772 IP6 zvs-note > ff02::16: HBH ICMP6, multicast listener report v2, 3 group record(s), length 68
+09:03:19.405776 IP Broadcom.Home > all-systems.mcast.net: igmp query v2 [max resp time 10]
+09:03:19.408137 IP6 _gateway > ip6-allnodes: HBH ICMP6, multicast listener query v2 [gaddr ::], length 28
+09:03:19.412995 IP6 fe80::223:8bff:fec0:be02 > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:19.420769 IP6 fe80::10b3:9fff:fe8a:828d > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:19.644343 IP6 zvs-note > ff02::16: HBH ICMP6, multicast listener report v2, 3 group record(s), length 68
+09:03:19.655154 IP6 fe80::4a49:c7ff:fe0f:5c28 > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:19.736974 IP unknown > 224.0.0.251: igmp v2 report 224.0.0.251
+09:03:26.039208 IP 1.1.1.2.55069 > 239.255.255.250.1900: UDP, length 272
+09:03:26.040280 IP 1.1.1.2.55069 > 239.255.255.250.1900: UDP, length 272
+09:03:26.041257 IP 1.1.1.2.55069 > 239.255.255.250.1900: UDP, length 281
+09:03:26.042326 IP 1.1.1.2.55069 > 239.255.255.250.1900: UDP, length 281
+09:03:26.043522 IP 1.1.1.2.55069 > 239.255.255.250.1900: UDP, length 336
+09:03:26.044808 IP 1.1.1.2.55069 > 239.255.255.250.1900: UDP, length 336
+09:03:26.045896 IP 1.1.1.2.55069 > 239.255.255.250.1900: UDP, length 346
+09:03:26.046985 IP 1.1.1.2.55069 > 239.255.255.250.1900: UDP, length 346
+09:03:28.397852 IP6 _gateway > ff02::1:ff20:fb80: ICMP6, neighbor solicitation, who has zvs-note, length 32
+09:03:29.420653 IP Broadcom.Home > all-systems.mcast.net: igmp query v2 [max resp time 10]
+09:03:29.422468 IP6 _gateway > ip6-allnodes: HBH ICMP6, multicast listener query v2 [gaddr ::], length 28
+09:03:29.428980 IP6 fe80::223:8bff:fec0:be02 > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:29.430737 IP6 fe80::10b3:9fff:fe8a:828d > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:29.484845 IP6 fe80::4a49:c7ff:fe0f:5c28 > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:29.888964 IP unknown > 224.0.0.251: igmp v2 report 224.0.0.251
+09:03:33.490163 ARP, Request who-has unknown tell Broadcom.Home, length 46
+09:03:34.491879 ARP, Request who-has unknown tell Broadcom.Home, length 46
+09:03:34.567266 IP unknown.mdns > 224.0.0.251.mdns: 0*- [0q] 4/0/3 (Cache flush) PTR Android.local., (Cache flush) PTR Android.local., (Cache flush) A 192.168.25.7, (Cache flush) AAAA fe80::dace:3aff:fee2:40d1 (246)
+09:03:34.569936 IP6 fe80::dace:3aff:fee2:40d1.mdns > ff02::fb.mdns: 0*- [0q] 4/0/3 (Cache flush) PTR Android.local., (Cache flush) PTR Android.local., (Cache flush) A 192.168.25.7, (Cache flush) AAAA fe80::dace:3aff:fee2:40d1 (246)
+09:03:34.572772 ARP, Request who-has unknown tell zvs-note, length 46
+09:03:34.572824 ARP, Reply unknown is-at 00:23:8b:c0:be:02 (oui Unknown), length 28
+09:03:35.493691 ARP, Request who-has unknown tell Broadcom.Home, length 46
+09:03:36.373995 IP6 _gateway > ff02::1:ff53:bc92: ICMP6, neighbor solicitation, who has fe80::8ab4:a6ff:fe53:bc92, length 32
+09:03:36.954528 IP6 _gateway > ff02::1:ff53:bc92: ICMP6, neighbor solicitation, who has 2804:7f2:2981:8833:8ab4:a6ff:fe53:bc92, length 32
+09:03:39.439547 IP Broadcom.Home > all-systems.mcast.net: igmp query v2 [max resp time 10]
+09:03:39.441568 IP6 _gateway > ip6-allnodes: HBH ICMP6, multicast listener query v2 [gaddr ::], length 28
+09:03:39.448502 IP6 fe80::10b3:9fff:fe8a:828d > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:39.448808 IP6 fe80::223:8bff:fec0:be02 > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:39.514910 IP6 zvs-note > ff02::16: HBH ICMP6, multicast listener report v2, 3 group record(s), length 68
+09:03:39.517509 IP6 fe80::4a49:c7ff:fe0f:5c28 > ff02::16: HBH ICMP6, multicast listener report v2, 2 group record(s), length 48
+09:03:39.804961 IP unknown > 224.0.0.251: igmp v2 report 224.0.0.251

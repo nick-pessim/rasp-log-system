@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Home - RLS</title>
+    <title>Adicionar - RLS</title>
      <meta charset="utf-8" />
      <link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}" />
   </head>
@@ -52,6 +52,19 @@
 	    {% endif %}
         </div>
       </a>
+      <!--Novo botão principal-->
+      <a href="/tcp-dump/" style="text-decoration: none; color: #000;">
+        <div class="option">
+          <img src="{% static 'img/home/lupa.png' %}" />
+          <label>TCPDump</label>
+          {% if btn_first == 4  %}
+            <!--Botão selecionado-->
+            <div class="optionselect">
+              <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+            </div>
+          {% endif  %}
+        </div>
+      </a>
       <a href="/logout/" style="text-decoration: none; color: #000;">
         <div class="option">
           <img src="{% static 'img/home/logout.png' %}" />
@@ -75,27 +88,31 @@
       	<div class="infodisplaytitle">
           <label>Adicionar dispositivo</label>
       	</div>
-	<form class="infodisplayform" method="post" action="device/">{% csrf_token %}
-	  <div class="infodisplayattribute">
-	    <label>Nome:</label><br />
-            <input type="text" name="nome" id="nome" /><br />
-	  </div>
-	  <div class="infodisplayattribute">
-	    <label>IP:</label><br />
-            <input type="text" name="ip" id="ip" /><br />
-	  </div>
-	  <div class="infodisplayattribute">
-	    <label>Versão do SNMP:</label><br />
-            <input type="text" name="vers_snmp" id="vers_snmp" /><br />
-	  </div>
-	  <div class="infodisplayattribute">
-	    <label>Community:</label><br />
-            <input type="text" name="community" id="community" /><br />
-          </div>
-	  <div style="padding-top: 64px;">
-	    <input type="submit" value="Adicionar" name="sendbtn" id="sendbtn" />
-          </div>
-	</form>
+      	<form class="infodisplayform" method="post" action="device/">{% csrf_token %}
+      	  <div class="infodisplayattribute">
+      	    <label>Nome SSH:</label><br />
+                  <input type="text" name="nome" id="nome" /><br />
+      	  </div>
+          <div class="infodisplayattribute">
+      	    <label>Senha SSH:</label><br />
+                  <input type="password" name="senha" id="senha" /><br />
+      	  </div>
+      	  <div class="infodisplayattribute">
+      	    <label>IP:</label><br />
+                  <input type="text" name="ip" id="ip" /><br />
+      	  </div>
+      	  <div class="infodisplayattribute">
+      	    <label>Versão do SNMP:</label><br />
+                  <input type="text" name="vers_snmp" id="vers_snmp" /><br />
+      	  </div>
+      	  <div class="infodisplayattribute">
+      	    <label>Community:</label><br />
+                  <input type="text" name="community" id="community" /><br />
+                </div>
+      	  <div style="padding-top: 64px;">
+      	    <input type="submit" value="Adicionar" name="sendbtn" id="sendbtn" />
+                </div>
+      	</form>
       <div class="infodisplayfeedback">
         <div class="infodisplayfeedbackattribute">
           <label class="fixed_input">Nome:</label>
@@ -118,7 +135,7 @@
 	  <label id=interf_disp name=interf_disp class="json_input">-</label>
         </div><br>
         <div class="infodisplayfeedbackattribute">
-	  <label class="fixed_input">Vlan:</label>
+	  <label class="fixed_input">Vlans:</label>
   	  <label id=vlan_disp name=vlan_disp class="json_input">-</label>
         </div><br>
 	<input type="button" value="Testar" name="testbtn" id="testbtn" style="float: right;"/>
@@ -139,7 +156,7 @@
           vers_snmp = "0";
         if(document.getElementById('community').value == "")
           community = "0";
-	
+
         var raspSocket = new WebSocket(
           'ws://' + window.location.host
           + '/ws/add/'
@@ -165,7 +182,7 @@
 
         raspSocket.onclose = function(e) {
             console.error('Erro na socket');
-        };  
+        };
 
         document.querySelector('#testbtn').onclick = function(e) {
             var nome = document.querySelector('#nome').value;

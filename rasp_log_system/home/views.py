@@ -10,7 +10,7 @@ from login.models import Login
 sys.path.insert(0, current_dir)
 
 # Create your views here.
-def menu(request):
+def menu(request): 
     #Teste se existe algum usuário conectado
     #para o ip atual
     l = get_logged_user(request)

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
+#common imports
 from datetime import datetime
 import os,sys,inspect
 current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
@@ -38,10 +39,11 @@ def add_device(request):
     #Info de post
     nome = request.POST['nome']
     ip = request.POST['ip']
+    password = request.POST['senha']
     vers_snmp = request.POST['vers_snmp']
     community = request.POST['community']
 
-    Raspberry.add_raspberry(l.username, nome, ip, vers_snmp, community)
+    Raspberry.add_raspberry(l.username, nome, password, ip, vers_snmp, community)
 
     return HttpResponseRedirect('/add/')
 
@@ -66,4 +68,3 @@ def get_devices(login):
         if login.username in rasp.logins:
             devices_list.append(rasp)
     return devices_list
-

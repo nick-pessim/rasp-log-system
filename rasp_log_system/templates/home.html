@@ -53,6 +53,19 @@
         </div>
       </a>
       <!--Novo botão principal-->
+      <a href="/tcp-dump/" style="text-decoration: none; color: #000;">
+        <div class="option">
+          <img src="{% static 'img/home/lupa.png' %}" />
+          <label>TCPDump</label>
+          {% if btn_first == 4  %}
+            <!--Botão selecionado-->
+            <div class="optionselect">
+              <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+            </div>
+          {% endif  %}
+        </div>
+      </a>
+      <!--Novo botão principal-->
       <a href="/logout/" style="text-decoration: none; color: #000;">
         <div class="option">
           <img src="{% static 'img/home/logout.png' %}" />
