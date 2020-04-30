@@ -97,7 +97,7 @@
         <div class="infodisplayinput">
           <div class="type_of_interface">
 	          <label>Tipo de interface:</label><br>
-	          <input type="radio" id="fisica" name="interf_type" value="Física" />
+	          <input type="radio" id="fisica" name="interf_type" value="Física" checked="checked" />
 	          <label for="fisica">Física</label><br>
 	          <input type="radio" id="virtual" name="interf_type" value="Virtual" />
             <label for="virtual">Virtual</label><br>
@@ -133,12 +133,60 @@
             var interf = document.getElementById('combo_interfs_fis').options[combo_interfs_fis.selectedIndex].text;
             var duracao = document.getElementById('duracao').value;
 
+            var vir_options = [
+              {% for int_vir in interfs_vir %}
+                '{{int_vir}}',
+              {% endfor %}
+            ];
+
+            var fis_options = [
+              {% for int_fis in interfs_fis %}
+                '{{int_fis}}',
+              {% endfor %}
+            ];
+
+            document.querySelector('#fisica').onchange = function(e) {
+              if (document.getElementById('fisica').checked){
+                var select = document.querySelector("#combo_interfs_fis");
+                var length = select.options.length;
+                /* Remove todas as opçoes da combobox */
+                for(i = 0; i < length; i++){
+                  select.options[0] = null;
+                  //sempre [0] pela atualização no select
+                }
+                /* Adiciona novas opcoes */
+                for(i = 0; i < fis_options.length; i++){
+                  var option = document.createElement('option');
+                  option.text = option.value = fis_options[i];
+                  select.add(option)
+                }
+              }
+            }
+
+            document.querySelector('#virtual').onchange = function(e) {
+              if (document.getElementById('virtual').checked){
+                var select = document.querySelector("#combo_interfs_fis");
+                var length = select.options.length;
+                /* Remove todas as opçoes da combobox */
+                for(i = 0; i < length; i++){
+                  select.options[0] = null;
+                  //sempre [0] pela atualização no select
+                }
+                /* Adiciona novas opcoes */
+                for(i = 0; i < vir_options.length; i++){
+                  var option = document.createElement('option');
+                  option.text = option.value = vir_options[i];
+                  select.add(option)
+                }
+              }
+            }
+
             //Setar um default para ws
             if(document.getElementById('combo_interfs_fis').options[combo_interfs_fis.selectedIndex].text == "")
               interf = "0";
             if(document.getElementById('duracao').value == "")
               duracao = "0";
-
+            //Socket config
             var sshSocket = new WebSocket(
               'ws://' + window.location.host
               + '/ws/tcp-dump/'

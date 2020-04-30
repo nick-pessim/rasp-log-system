@@ -233,3 +233,7 @@ img{
   border: 1px solid #ccc;
   background-color: #e6e6e6;
 }
+
+.download_area a{
+  text-align: center;
+}

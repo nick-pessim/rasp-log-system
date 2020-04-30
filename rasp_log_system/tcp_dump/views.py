@@ -32,12 +32,15 @@ def dump(request, dev_name=""):
 
     send_dict = {}
     if r != None:
+        #separa interfaces virtuais de fisicas
+        interf = separate_interf_types(ast.literal_eval(r.snmpget_by_descr('interfNames', str)))
         send_dict = {
             #Botão selecionado
             'btn_first': 4,
             'devices': devices,
             'rasp_chosen': r,
-            'interfs_fis': ast.literal_eval(r.snmpget_by_descr('interfNames', str)),    #para a combobox
+            'interfs_fis': interf['fis_interf'],    #para a combobox
+            'interfs_vir': interf['vir_interf'],    #
         }
     else:
         send_dict = {
@@ -46,6 +49,7 @@ def dump(request, dev_name=""):
             'devices': devices,
             'rasp_chosen': r,
             'interfs_fis': [], #ignore exception
+            'interfs_vir': [], #
         }
 
     print(send_dict)
@@ -85,3 +89,13 @@ def get_devices(login):
         if login.username in rasp.logins:
             devices_list.append(rasp)
     return devices_list
+
+def separate_interf_types(interf_list):
+    fis_interf = []
+    vir_interf = []
+    for interf in interf_list:
+        if '.' in interf:               #interfaces virtuais em ambientes linux sao representados pela interface fisica.vlan_id
+            vir_interf.append(interf)
+        else:
+            fis_interf.append(interf)
+    return {'fis_interf': fis_interf, 'vir_interf': vir_interf}
