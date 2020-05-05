@@ -25,7 +25,7 @@ SECRET_KEY = '*85f-5@jdoj(n4k6@sb7o6owxon4f#1rkfw*624#(7=pb!p@!7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.25.11', '192.168.25.8']
+ALLOWED_HOSTS = ['192.168.0.2']
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'home',
     'channels',
     'add',
+    'connection'
 ]
 
 MIDDLEWARE = [

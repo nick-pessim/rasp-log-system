@@ -1,6 +1,10 @@
 from django.db import models
-import os
 import re
+import ast
+#common imports
+import os,inspect
+current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parent_dir = os.path.dirname(current_dir)
 from pathlib import Path
 
 # Create your models here.
@@ -11,6 +15,8 @@ class Raspberry(models.Model):
     vers_snmp = models.TextField()
     community = models.TextField()
     logins = models.TextField()
+    gateway = models.TextField()
+    gateway.default = ""
     logins.default = ""
     
     #Necessário instalação de novas configurações de OID,
@@ -25,14 +31,24 @@ class Raspberry(models.Model):
         #Caso exista algum raspberry com mesmas configurações
 
         for rasp in Raspberry.objects.all():
-            if ip_rasp == rasp.ip and vers_snmp == rasp.vers_snmp and community == rasp.community:
+            if ip_rasp == rasp.ip and vers_snmp == rasp.vers_snmp and community == rasp.community and rasp.nome == nome and rasp.password == password:
                 logins_rasp = rasp.logins+','+username
                 Raspberry.objects.filter(ip=ip_rasp).update(logins=logins_rasp)
                 return Raspberry.objects.get(ip=ip_rasp)
 
         r = Raspberry(nome=nome, password=password, ip=ip_rasp, vers_snmp=vers_snmp, community=community, logins=username)
+        r.find_gateway()
         r.save()
         return r
+
+    def find_gateway(self):
+        #separa interfaces virtuais de fisicas
+        interf = separate_interf_types(ast.literal_eval(self.snmpget_by_descr('interfNames', str)))
+        #connection_interf seleciona interface que existe vlans configuradas
+        connection_interf = interf['vir_interf'][0]
+        connection_interf = connection_interf[0:connection_interf.find('.')]
+        self.gateway = os.popen("bash "+current_dir+"/get_gateway.sh "+self.nome+" "+self.ip+" "+self.password+" "+connection_interf).read()
+
 
     def call_oid(oid_desc):
         oid_file = open(os.path.join(os.path.dirname(__file__), 'oids.txt'), 'r')
@@ -104,3 +120,13 @@ class Raspberry(models.Model):
                         resp['ret'] = float(resp['ret'])
                     full_ret.append(resp['ret'])
                 return str(full_ret)
+
+def separate_interf_types(interf_list):
+    fis_interf = []
+    vir_interf = []
+    for interf in interf_list:
+        if '.' in interf:               #interfaces virtuais em ambientes linux sao representados pela interface fisica.vlan_id
+            vir_interf.append(interf)
+        else:
+            fis_interf.append(interf)
+    return {'fis_interf': fis_interf, 'vir_interf': vir_interf}

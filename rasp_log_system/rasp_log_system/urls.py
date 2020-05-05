@@ -19,6 +19,7 @@ from login.views import login, logging, logout
 from home.views import menu
 from add.views import add, add_device
 from tcp_dump.views import dump, download_dump_file
+from connection.views import add_device_gateway, add_connection, reset_connection
 
 
 urlpatterns = [
@@ -31,5 +32,9 @@ urlpatterns = [
     path('tcp-dump/', dump),
     path('tcp-dump/<str:dev_name>/', dump),
     path('tcp-dump/download/<str:dump_file>/', download_dump_file),
+    path('connection/', add_device_gateway),
+    path('connection/<str:dev_name>/', add_device_gateway),
+    path('connection/<str:dev_name>/device/', add_connection),
+    path('connection/<str:dev_name>/reset/', reset_connection),
     path('', login),
 ]

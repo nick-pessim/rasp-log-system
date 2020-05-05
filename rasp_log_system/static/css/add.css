@@ -168,16 +168,16 @@ img{
 
 .infodisplayfeedback{
   position: absolute;
-  left: calc(100% - 560px);
+  left: 300px;
   top: 53px;
   font-size: 15px;
   padding-left: 20px;
   padding-top: 10px;
-  width: 500px;
+  width: 430px;
 }
 
 .infodisplayfeedbackattribute{
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 
 .infodisplayfeedbackattribute label{
@@ -191,5 +191,5 @@ img{
 
 .json_input{
   text-align: right;
-  width: 400px;
+  width: 330px;
 }

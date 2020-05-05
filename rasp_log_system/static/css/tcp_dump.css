@@ -209,6 +209,8 @@ img{
 .time_input input{
   width: 170px;
   float: right;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .download_area{

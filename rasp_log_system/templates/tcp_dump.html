@@ -95,24 +95,17 @@
         <label class="request_option">Escolha o dispositivo que deseja<br>efetuar o tcp-dumping<br><label style="font-size: 50px;">⇦</label></label>
       {% else %}
         <div class="infodisplayinput">
-          <div class="type_of_interface">
-	          <label>Tipo de interface:</label><br>
-	          <input type="radio" id="fisica" name="interf_type" value="Física" checked="checked" />
-	          <label for="fisica">Física</label><br>
-	          <input type="radio" id="virtual" name="interf_type" value="Virtual" />
-            <label for="virtual">Virtual</label><br>
-          </div>
-	        <div class="interf_input">
-	          <label>Interface:</label>
-	          <select id="combo_interfs_fis">
-            {% for interface in interfs_fis %}
-	            <option value="{{interface}}">{{interface}}</option>
-	          {% endfor %}
+	  <div class="interf_input">
+	    <label>Interface:</label>
+	    <select id="combo_interfs_fis">
+              {% for interface in interfs_fis %}
+	        <option value="{{interface}}">{{interface}}</option>
+	      {% endfor %}
             </select>
-	        </div>
+	  </div>
           <div class="time_input">
             <label>Tempo(min):</label>
-            <input type="text" name="duracao" id="duracao" />
+            <input type="number" name="duracao" id="duracao" min="1" max="300"/>
           </div>
           <!--adicionar espaçamento sem alterar bloco-->
           <div style="padding-top: 30px;"></div>
@@ -132,54 +125,6 @@
             var senha = "{{rasp_chosen.password}}";
             var interf = document.getElementById('combo_interfs_fis').options[combo_interfs_fis.selectedIndex].text;
             var duracao = document.getElementById('duracao').value;
-
-            var vir_options = [
-              {% for int_vir in interfs_vir %}
-                '{{int_vir}}',
-              {% endfor %}
-            ];
-
-            var fis_options = [
-              {% for int_fis in interfs_fis %}
-                '{{int_fis}}',
-              {% endfor %}
-            ];
-
-            document.querySelector('#fisica').onchange = function(e) {
-              if (document.getElementById('fisica').checked){
-                var select = document.querySelector("#combo_interfs_fis");
-                var length = select.options.length;
-                /* Remove todas as opçoes da combobox */
-                for(i = 0; i < length; i++){
-                  select.options[0] = null;
-                  //sempre [0] pela atualização no select
-                }
-                /* Adiciona novas opcoes */
-                for(i = 0; i < fis_options.length; i++){
-                  var option = document.createElement('option');
-                  option.text = option.value = fis_options[i];
-                  select.add(option)
-                }
-              }
-            }
-
-            document.querySelector('#virtual').onchange = function(e) {
-              if (document.getElementById('virtual').checked){
-                var select = document.querySelector("#combo_interfs_fis");
-                var length = select.options.length;
-                /* Remove todas as opçoes da combobox */
-                for(i = 0; i < length; i++){
-                  select.options[0] = null;
-                  //sempre [0] pela atualização no select
-                }
-                /* Adiciona novas opcoes */
-                for(i = 0; i < vir_options.length; i++){
-                  var option = document.createElement('option');
-                  option.text = option.value = vir_options[i];
-                  select.add(option)
-                }
-              }
-            }
 
             //Setar um default para ws
             if(document.getElementById('combo_interfs_fis').options[combo_interfs_fis.selectedIndex].text == "")

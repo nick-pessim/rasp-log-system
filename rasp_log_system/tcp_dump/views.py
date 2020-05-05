@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 import ast #convert str list into list
+import mimetypes #create download file
 #common imports
 from datetime import datetime
 import os,sys,inspect
@@ -9,9 +10,8 @@ parent_dir = os.path.dirname(current_dir)
 sys.path.insert(0, parent_dir)
 from login.models import Login
 from home.models import Raspberry
+from connection.models import Connection
 sys.path.insert(0, current_dir)
-import mimetypes
-
 
 # Create your views here.
 def dump(request, dev_name=""):
@@ -29,18 +29,25 @@ def dump(request, dev_name=""):
     for dev in devices:
         if dev.nome == dev_name:
             r = dev
+    #Gateway do dispositivo
+    c = None
+    for con in Connection.objects.all():
+        if con.ip == dev.gateway:
+            c = con
+
+    #Request vlans
+    vlans = c.get_vlans()
+    
+    print(vlans)
 
     send_dict = {}
     if r != None:
-        #separa interfaces virtuais de fisicas
-        interf = separate_interf_types(ast.literal_eval(r.snmpget_by_descr('interfNames', str)))
         send_dict = {
             #Botão selecionado
             'btn_first': 4,
             'devices': devices,
             'rasp_chosen': r,
-            'interfs_fis': interf['fis_interf'],    #para a combobox
-            'interfs_vir': interf['vir_interf'],    #
+            'interfs_fis': vlans,                   #
         }
     else:
         send_dict = {
@@ -51,8 +58,6 @@ def dump(request, dev_name=""):
             'interfs_fis': [], #ignore exception
             'interfs_vir': [], #
         }
-
-    print(send_dict)
 
     return render(request, 'tcp_dump.html', send_dict)
 

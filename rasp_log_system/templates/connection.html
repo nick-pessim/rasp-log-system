@@ -1,0 +1,245 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <title>TCPDump - RLS</title>
+     <meta charset="utf-8" />
+     <link rel="stylesheet" type="text/css" href="{% static 'css/connection.css' %}" />
+  </head>
+  <body>
+    <div class="heather">
+      <img src="{% static 'img/login/cpd-logo.jpg' %}" />
+      <div class=searchbox>
+      </div>
+    </div>
+    <div class="optionsbox">
+      <!--Novo botão principal-->
+      <a href="/home/" style="text-decoration: none; color: #000;">
+        <div class="option">
+	         <img src="{% static 'img/home/raspberry.png' %}" />
+           <label>Home</label>
+	         {% if btn_first == 1  %}
+	         <!--Botão selecionado-->
+	           <div class="optionselect">
+	             <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+	           </div>
+	         {% endif  %}
+        </div>
+      </a>
+      <!--Novo botão principal-->
+      <a href="/connection/" style="text-decoration: none; color: #000;">
+        <div class="option">
+          <img src="{% static 'img/home/tomada.png' %}" />
+          <label>Conexões</label>
+          {% if btn_first == 2  %}
+	        <!--Botão selecionado-->
+            <div class="optionselect">
+              <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+            </div>
+          {% endif  %}
+        </div>
+      </a>
+      <!--Novo botão principal-->
+      <a href="/add/" style="text-decoration: none; color: #000;">
+        <div class="option">
+          <img src="{% static 'img/home/sinal_mais.png' %}" />
+          <label>Adicionar</label>
+          {% if btn_first == 3  %}
+	        <!--Botão selecionado-->
+            <div class="optionselect">
+              <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+            </div>
+	        {% endif %}
+        </div>
+      </a>
+      <!--Novo botão principal-->
+      <a href="/tcp-dump/" style="text-decoration: none; color: #000;">
+        <div class="option">
+          <img src="{% static 'img/home/lupa.png' %}" />
+          <label>TCPDump</label>
+          {% if btn_first == 4  %}
+            <!--Botão selecionado-->
+            <div class="optionselect">
+              <div style="width: 4px; height: 60px; background-color: #BD1143;" />
+            </div>
+          {% endif  %}
+        </div>
+      </a>
+      <!--Novo botão principal-->
+      <a href="/logout/" style="text-decoration: none; color: #000;">
+        <div class="option">
+          <img src="{% static 'img/home/logout.png' %}" />
+          <label>Sair</label>
+        </div>
+      </a>
+    </div>
+    <div class="suboptionsbox">
+      <div class="suboptiontitle">
+        <label>Dispositivos</label>
+      </div>
+      {% for device in devices %}
+        <a href="/connection/{{device.nome}}/" style="text-decoration: none; color: #000;">
+          <div class="suboption">
+	          <label>{{device.nome}}</label>
+          </div>
+	      </a>
+      {% endfor %}
+    </div>
+    <div class="infodisplay">
+      <!--Complete empty space-->
+      <div style="height: 10px; width:1034; background-color: #f5f5f5; position: absolut;"></div>
+      <div class="infodisplaytitle">
+        <label>Configurar gateway</label>
+      </div>
+      {% if rasp_chosen is None %}
+        <label class="request_option">Escolha o dispositivo que deseja<br>configurar o gateway<br><label style="font-size: 50px;">⇦</label></label>
+      {% else %}
+      {% if rasp_con is None  %}
+	<form class="infodisplayinput" method="post" action="device/">{% csrf_token %}
+	  <label style="display: inline-block; float:left">Gateway:</label>
+	  <label name="ip" id="ip" style="display: inline-block; float:right">{{rasp_chosen.gateway}}</label>
+	  <div style="height:10px"></div>
+	  <div class="user_input">
+	    <label>Nome SSH:</label><br />
+	    <input type="text" name="nome" id="nome" />
+          </div>
+	  <div class="user_input">
+            <label>Senha:</label><br />
+            <input type="password" name="pass" id="pass" />
+          </div>
+	  <div class="user_input">
+            <label>Senha de enable:</label><br />
+            <input type="password" name="enable" id="enable" />
+          </div>
+	  <div class="user_input">
+            <label>Versão do SNMP:</label><br />
+            <input type="text" name="vers_snmp" id="vers_snmp" />
+          </div>
+	  <div class="user_input">
+            <label>Community:</label><br />
+            <input type="text" name="community" id="community" />
+          </div>
+
+	  <div style="padding-top: 64px;">
+            <input type="submit" value="Adicionar" name="sendbtn" id="sendbtn" />
+          </div>
+	</form>
+        <!--adicionar espaçamento sem alterar bloco-->
+        <div style="padding-top: 30px;"></div>
+        <div class="infodisplayoutput">
+          <label id="output_label"></label>
+          <script>
+            var nome = "{{rasp_chosen.nome}}";
+            var ip = "{{rasp_chosen.ip}}";
+            var senha = "{{rasp_chosen.password}}";
+            var interf = document.getElementById('combo_interfs_fis').options[combo_interfs_fis.selectedIndex].text;
+            var duracao = document.getElementById('duracao').value;
+
+            var vir_options = [
+              {% for int_vir in interfs_vir %}
+                '{{int_vir}}',
+              {% endfor %}
+            ];
+
+            var fis_options = [
+              {% for int_fis in interfs_fis %}
+                '{{int_fis}}',
+              {% endfor %}
+            ];
+
+            document.querySelector('#fisica').onchange = function(e) {
+              if (document.getElementById('fisica').checked){
+                var select = document.querySelector("#combo_interfs_fis");
+                var length = select.options.length;
+                /* Remove todas as opçoes da combobox */
+                for(i = 0; i < length; i++){
+                  select.options[0] = null;
+                  //sempre [0] pela atualização no select
+                }
+                /* Adiciona novas opcoes */
+                for(i = 0; i < fis_options.length; i++){
+                  var option = document.createElement('option');
+                  option.text = option.value = fis_options[i];
+                  select.add(option)
+                }
+              }
+            }
+
+            document.querySelector('#virtual').onchange = function(e) {
+              if (document.getElementById('virtual').checked){
+                var select = document.querySelector("#combo_interfs_fis");
+                var length = select.options.length;
+                /* Remove todas as opçoes da combobox */
+                for(i = 0; i < length; i++){
+                  select.options[0] = null;
+                  //sempre [0] pela atualização no select
+                }
+                /* Adiciona novas opcoes */
+                for(i = 0; i < vir_options.length; i++){
+                  var option = document.createElement('option');
+                  option.text = option.value = vir_options[i];
+                  select.add(option)
+                }
+              }
+            }
+
+            //Setar um default para ws
+            if(document.getElementById('combo_interfs_fis').options[combo_interfs_fis.selectedIndex].text == "")
+              interf = "0";
+            if(document.getElementById('duracao').value == "")
+              duracao = "0";
+            //Socket config
+            var sshSocket = new WebSocket(
+              'ws://' + window.location.host
+              + '/ws/tcp-dump/'
+              + nome
+              + '/'
+              + senha
+              + '/'
+              + ip
+              + '/'
+              + interf
+              + '/'
+              + duracao
+              + '/'
+            );
+
+            sshSocket.onmessage = function(e) {
+                var data = JSON.parse(e.data);
+    	          document.querySelector('#output_label').innerHTML = data.data.replace(/\n/g, "<br />");
+                document.querySelector('#download_area_link').innerHTML = "download";
+                document.querySelector('#download_area_link').href = "/tcp-dump/download/"+data.pcap_file;
+
+            };
+
+            sshSocket.onclose = function(e) {
+                console.error('Erro na socket');
+            };
+
+            document.querySelector('#send_tcp').onclick = function(e) {
+                var nome = "{{rasp_chosen.nome}}";
+                var ip = "{{rasp_chosen.ip}}";
+                var senha = "{{rasp_chosen.password}}";
+                var interf = document.getElementById('combo_interfs_fis').options[combo_interfs_fis.selectedIndex].text;
+    	          var duracao = document.querySelector('#duracao').value;
+
+                sshSocket.send(JSON.stringify({
+                  'nome': nome,
+    	            'ip': ip,
+    	            'senha': senha,
+    	            'interf': interf,
+                  'duracao': duracao,
+                }));
+            };
+          </script>
+        </div>
+      {% else %}
+        <div class="request_option">
+          <label><label style="font-size: 50px;">✔</label><br />Gateway configurado com sucesso!<br /></label>
+	  <a href="reset/" style="color: #bfbfbf; font-size:13px; text-decoration: none;">Resetar</a>
+	</div>
+      {% endif %}	
+      {% endif %}
+    </div>
+  </body>
+</html>
