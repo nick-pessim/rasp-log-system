@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+#Cria log com o dump requisitado
+
 #$1 - usuario
 #$2 - ip
 #$3 - senha

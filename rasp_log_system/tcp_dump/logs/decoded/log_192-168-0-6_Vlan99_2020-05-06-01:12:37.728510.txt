@@ -1,0 +1,29 @@
+01:12:37.945345 IP 192.168.0.6.44912 > nsc2.ufrgs.br.domain: 11416+ A? ntp.ubuntu.com.ufrgs.br. (41)
+01:12:37.945511 IP 192.168.0.6.37408 > nsc1.ufrgs.br.domain: Flags [S], seq 4039188953, win 29200, options [mss 1460,sackOK,TS val 3824595070 ecr 0,nop,wscale 7], length 0
+01:12:38.948536 IP 192.168.0.6.37408 > nsc1.ufrgs.br.domain: Flags [S], seq 4039188953, win 29200, options [mss 1460,sackOK,TS val 3824596073 ecr 0,nop,wscale 7], length 0
+01:12:39.463484 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:12:40.164530 IP 192.168.0.6.47206 > nsc2.ufrgs.br.domain: Flags [S], seq 817794528, win 29200, options [mss 1460,sackOK,TS val 2280198078 ecr 0,nop,wscale 7], length 0
+01:12:40.164564 IP 192.168.0.6.37404 > nsc1.ufrgs.br.domain: Flags [S], seq 1081961562, win 29200, options [mss 1460,sackOK,TS val 3824597289 ecr 0,nop,wscale 7], length 0
+01:12:40.964532 IP 192.168.0.6.37408 > nsc1.ufrgs.br.domain: Flags [S], seq 4039188953, win 29200, options [mss 1460,sackOK,TS val 3824598089 ecr 0,nop,wscale 7], length 0
+01:12:41.465915 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:12:42.950501 IP 192.168.0.6.44912 > nsc2.ufrgs.br.domain: 11416+ A? ntp.ubuntu.com.ufrgs.br. (41)
+01:12:42.950707 IP 192.168.0.6.37410 > nsc1.ufrgs.br.domain: Flags [S], seq 3149497752, win 29200, options [mss 1460,sackOK,TS val 3824600075 ecr 0,nop,wscale 7], length 0
+01:12:42.951416 IP 192.168.0.6.37412 > nsc1.ufrgs.br.domain: Flags [S], seq 3653642282, win 29200, options [mss 1460,sackOK,TS val 3824600075 ecr 0,nop,wscale 7], length 0
+01:12:43.462659 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:12:43.972528 IP 192.168.0.6.37412 > nsc1.ufrgs.br.domain: Flags [S], seq 3653642282, win 29200, options [mss 1460,sackOK,TS val 3824601097 ecr 0,nop,wscale 7], length 0
+01:12:43.972555 IP 192.168.0.6.37410 > nsc1.ufrgs.br.domain: Flags [S], seq 3149497752, win 29200, options [mss 1460,sackOK,TS val 3824601097 ecr 0,nop,wscale 7], length 0
+01:12:45.028531 IP 192.168.0.6.37408 > nsc1.ufrgs.br.domain: Flags [S], seq 4039188953, win 29200, options [mss 1460,sackOK,TS val 3824602153 ecr 0,nop,wscale 7], length 0
+01:12:45.463635 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:12:45.988535 IP 192.168.0.6.37410 > nsc1.ufrgs.br.domain: Flags [S], seq 3149497752, win 29200, options [mss 1460,sackOK,TS val 3824603113 ecr 0,nop,wscale 7], length 0
+01:12:45.988564 IP 192.168.0.6.37412 > nsc1.ufrgs.br.domain: Flags [S], seq 3653642282, win 29200, options [mss 1460,sackOK,TS val 3824603113 ecr 0,nop,wscale 7], length 0
+01:12:47.463402 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:12:47.954915 IP 192.168.0.6.44912 > nsc2.ufrgs.br.domain: 11416+ A? ntp.ubuntu.com.ufrgs.br. (41)
+01:12:47.955079 IP 192.168.0.6.37414 > nsc1.ufrgs.br.domain: Flags [S], seq 2237877955, win 29200, options [mss 1460,sackOK,TS val 3824605079 ecr 0,nop,wscale 7], length 0
+01:12:48.964513 IP 192.168.0.6.37414 > nsc1.ufrgs.br.domain: Flags [S], seq 2237877955, win 29200, options [mss 1460,sackOK,TS val 3824606089 ecr 0,nop,wscale 7], length 0
+01:12:49.462544 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:12:50.148545 IP 192.168.0.6.37412 > nsc1.ufrgs.br.domain: Flags [S], seq 3653642282, win 29200, options [mss 1460,sackOK,TS val 3824607273 ecr 0,nop,wscale 7], length 0
+01:12:50.148579 IP 192.168.0.6.37410 > nsc1.ufrgs.br.domain: Flags [S], seq 3149497752, win 29200, options [mss 1460,sackOK,TS val 3824607273 ecr 0,nop,wscale 7], length 0
+01:12:50.980538 IP 192.168.0.6.37414 > nsc1.ufrgs.br.domain: Flags [S], seq 2237877955, win 29200, options [mss 1460,sackOK,TS val 3824608105 ecr 0,nop,wscale 7], length 0
+01:12:51.172530 ARP, Request who-has 192.168.0.4 tell 192.168.0.6, length 28
+01:12:51.180479 ARP, Reply 192.168.0.4 is-at 50:04:00:01:00:07 (oui Unknown), length 46
+01:12:51.463595 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42

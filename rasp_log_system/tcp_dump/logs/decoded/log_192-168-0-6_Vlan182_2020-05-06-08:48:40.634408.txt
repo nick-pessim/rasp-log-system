@@ -1,0 +1,3 @@
+08:49:00.719208 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 80b6.50:04:00:01:00:07.8001, length 42
+08:49:02.723990 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 80b6.50:04:00:01:00:07.8001, length 42
+08:49:04.721174 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 80b6.50:04:00:01:00:07.8001, length 42

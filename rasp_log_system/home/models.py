@@ -41,6 +41,12 @@ class Raspberry(models.Model):
         r.save()
         return r
 
+    def create_vlan(self, interf):
+        os.popen('bash '+current_dir+'/create_vlan.sh '+self.nome+' '+self.ip+' '+self.password+' '+interf.split('.')[0]+' '+interf.split('.')[1])
+    
+    def delete_vlan(self, interf):
+        os.popen('bash '+current_dir+'/delete_vlan.sh '+self.nome+' '+self.ip+' '+self.password+' '+interf.split('.')[0]+' '+interf.split('.')[1])
+
     def find_gateway(self):
         #separa interfaces virtuais de fisicas
         interf = separate_interf_types(ast.literal_eval(self.snmpget_by_descr('interfNames', str)))

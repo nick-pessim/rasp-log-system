@@ -37,8 +37,13 @@ def dump(request, dev_name=""):
 
     #Request vlans
     vlans = c.get_vlans()
-    
-    print(vlans)
+    #remove exception
+    vlans_exc = os.popen('bash '+parent_dir+'/vlan_exceptions.sh').read().split(',')
+    for exc in vlans_exc:
+        print(exc)
+        for v in vlans:
+            if exc.replace("\n","") == v.replace("\n",""):
+                vlans.remove(v)
 
     send_dict = {}
     if r != None:

@@ -1,0 +1,108 @@
+01:24:18.602826 IP 192.168.0.6.47548 > nsc2.ufrgs.br.domain: Flags [S], seq 3008695724, win 29200, options [mss 1460,sackOK,TS val 2280896516 ecr 0,nop,wscale 7], length 0
+01:24:18.602967 IP 192.168.0.6.50627 > nsc1.ufrgs.br.domain: 65307+ AAAA? ntp.ubuntu.com. (32)
+01:24:18.603080 IP 192.168.0.6.47550 > nsc2.ufrgs.br.domain: Flags [S], seq 3600452416, win 29200, options [mss 1460,sackOK,TS val 2280896516 ecr 0,nop,wscale 7], length 0
+01:24:19.452751 ARP, Request who-has 192.168.0.6 tell 192.168.0.3, length 46
+01:24:19.452787 ARP, Reply 192.168.0.6 is-at 00:50:04:00:02:01 (oui Unknown), length 28
+01:24:19.461473 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:19.473798 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 1, length 64
+01:24:19.473834 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 1, length 64
+01:24:19.620544 IP 192.168.0.6.47550 > nsc2.ufrgs.br.domain: Flags [S], seq 3600452416, win 29200, options [mss 1460,sackOK,TS val 2280897534 ecr 0,nop,wscale 7], length 0
+01:24:19.620577 IP 192.168.0.6.47548 > nsc2.ufrgs.br.domain: Flags [S], seq 3008695724, win 29200, options [mss 1460,sackOK,TS val 2280897534 ecr 0,nop,wscale 7], length 0
+01:24:20.458759 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 2, length 64
+01:24:20.458784 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 2, length 64
+01:24:21.455843 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 3, length 64
+01:24:21.455870 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 3, length 64
+01:24:21.463557 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:21.636545 IP 192.168.0.6.47548 > nsc2.ufrgs.br.domain: Flags [S], seq 3008695724, win 29200, options [mss 1460,sackOK,TS val 2280899550 ecr 0,nop,wscale 7], length 0
+01:24:21.636608 IP 192.168.0.6.47550 > nsc2.ufrgs.br.domain: Flags [S], seq 3600452416, win 29200, options [mss 1460,sackOK,TS val 2280899550 ecr 0,nop,wscale 7], length 0
+01:24:22.473380 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 4, length 64
+01:24:22.473413 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 4, length 64
+01:24:23.463628 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 5, length 64
+01:24:23.463671 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 5, length 64
+01:24:23.466502 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:23.608066 IP 192.168.0.6.47552 > nsc2.ufrgs.br.domain: Flags [S], seq 1393299915, win 29200, options [mss 1460,sackOK,TS val 2280901521 ecr 0,nop,wscale 7], length 0
+01:24:23.608258 IP 192.168.0.6.50627 > nsc1.ufrgs.br.domain: 65307+ AAAA? ntp.ubuntu.com. (32)
+01:24:24.470609 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 6, length 64
+01:24:24.470643 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 6, length 64
+01:24:24.612549 IP 192.168.0.6.47552 > nsc2.ufrgs.br.domain: Flags [S], seq 1393299915, win 29200, options [mss 1460,sackOK,TS val 2280902526 ecr 0,nop,wscale 7], length 0
+01:24:24.676526 ARP, Request who-has 192.168.0.3 tell 192.168.0.6, length 28
+01:24:24.700208 ARP, Reply 192.168.0.3 is-at 00:50:04:00:05:00 (oui Unknown), length 46
+01:24:25.463948 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:25.468977 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 7, length 64
+01:24:25.469019 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 7, length 64
+01:24:25.700544 IP 192.168.0.6.47550 > nsc2.ufrgs.br.domain: Flags [S], seq 3600452416, win 29200, options [mss 1460,sackOK,TS val 2280903614 ecr 0,nop,wscale 7], length 0
+01:24:25.700576 IP 192.168.0.6.47548 > nsc2.ufrgs.br.domain: Flags [S], seq 3008695724, win 29200, options [mss 1460,sackOK,TS val 2280903614 ecr 0,nop,wscale 7], length 0
+01:24:26.467812 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 8, length 64
+01:24:26.467851 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 8, length 64
+01:24:26.628535 IP 192.168.0.6.47552 > nsc2.ufrgs.br.domain: Flags [S], seq 1393299915, win 29200, options [mss 1460,sackOK,TS val 2280904542 ecr 0,nop,wscale 7], length 0
+01:24:27.464605 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:27.470571 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 9, length 64
+01:24:27.470614 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 9, length 64
+01:24:28.468654 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 10, length 64
+01:24:28.468696 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 10, length 64
+01:24:28.613149 IP 192.168.0.6.47554 > nsc2.ufrgs.br.domain: Flags [S], seq 4007015477, win 29200, options [mss 1460,sackOK,TS val 2280906526 ecr 0,nop,wscale 7], length 0
+01:24:28.613348 IP 192.168.0.6.37756 > nsc1.ufrgs.br.domain: Flags [S], seq 3176540388, win 29200, options [mss 1460,sackOK,TS val 3825305737 ecr 0,nop,wscale 7], length 0
+01:24:28.613777 IP 192.168.0.6.37758 > nsc1.ufrgs.br.domain: Flags [S], seq 3585541706, win 29200, options [mss 1460,sackOK,TS val 3825305738 ecr 0,nop,wscale 7], length 0
+01:24:29.463369 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:29.471108 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 11, length 64
+01:24:29.471143 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 11, length 64
+01:24:29.636523 IP 192.168.0.6.37758 > nsc1.ufrgs.br.domain: Flags [S], seq 3585541706, win 29200, options [mss 1460,sackOK,TS val 3825306761 ecr 0,nop,wscale 7], length 0
+01:24:29.636545 IP 192.168.0.6.37756 > nsc1.ufrgs.br.domain: Flags [S], seq 3176540388, win 29200, options [mss 1460,sackOK,TS val 3825306761 ecr 0,nop,wscale 7], length 0
+01:24:29.636551 IP 192.168.0.6.47554 > nsc2.ufrgs.br.domain: Flags [S], seq 4007015477, win 29200, options [mss 1460,sackOK,TS val 2280907550 ecr 0,nop,wscale 7], length 0
+01:24:29.796531 ARP, Request who-has 192.168.0.4 tell 192.168.0.6, length 28
+01:24:29.803524 ARP, Reply 192.168.0.4 is-at 50:04:00:01:00:07 (oui Unknown), length 46
+01:24:30.471533 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 12, length 64
+01:24:30.471579 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 12, length 64
+01:24:30.820543 IP 192.168.0.6.47552 > nsc2.ufrgs.br.domain: Flags [S], seq 1393299915, win 29200, options [mss 1460,sackOK,TS val 2280908734 ecr 0,nop,wscale 7], length 0
+01:24:31.462053 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:31.471687 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 13, length 64
+01:24:31.471717 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 13, length 64
+01:24:31.652547 IP 192.168.0.6.47554 > nsc2.ufrgs.br.domain: Flags [S], seq 4007015477, win 29200, options [mss 1460,sackOK,TS val 2280909566 ecr 0,nop,wscale 7], length 0
+01:24:31.652570 IP 192.168.0.6.37756 > nsc1.ufrgs.br.domain: Flags [S], seq 3176540388, win 29200, options [mss 1460,sackOK,TS val 3825308777 ecr 0,nop,wscale 7], length 0
+01:24:31.652575 IP 192.168.0.6.37758 > nsc1.ufrgs.br.domain: Flags [S], seq 3585541706, win 29200, options [mss 1460,sackOK,TS val 3825308777 ecr 0,nop,wscale 7], length 0
+01:24:32.476403 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 14, length 64
+01:24:32.476450 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 14, length 64
+01:24:33.464382 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:33.475942 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 15, length 64
+01:24:33.475979 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 15, length 64
+01:24:34.477533 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 16, length 64
+01:24:34.477568 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 16, length 64
+01:24:35.463706 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:35.478641 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 17, length 64
+01:24:35.478681 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 17, length 64
+01:24:35.684531 IP 192.168.0.6.37758 > nsc1.ufrgs.br.domain: Flags [S], seq 3585541706, win 29200, options [mss 1460,sackOK,TS val 3825312809 ecr 0,nop,wscale 7], length 0
+01:24:35.684561 IP 192.168.0.6.37756 > nsc1.ufrgs.br.domain: Flags [S], seq 3176540388, win 29200, options [mss 1460,sackOK,TS val 3825312809 ecr 0,nop,wscale 7], length 0
+01:24:35.684567 IP 192.168.0.6.47554 > nsc2.ufrgs.br.domain: Flags [S], seq 4007015477, win 29200, options [mss 1460,sackOK,TS val 2280913598 ecr 0,nop,wscale 7], length 0
+01:24:36.486404 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 18, length 64
+01:24:36.486466 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 18, length 64
+01:24:37.463628 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:37.480456 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 19, length 64
+01:24:37.480487 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 19, length 64
+01:24:38.489066 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 20, length 64
+01:24:38.489109 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 20, length 64
+01:24:38.623833 IP 192.168.0.6.47560 > nsc2.ufrgs.br.domain: Flags [S], seq 2251597722, win 29200, options [mss 1460,sackOK,TS val 2280916537 ecr 0,nop,wscale 7], length 0
+01:24:39.463609 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:39.483993 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 21, length 64
+01:24:39.484036 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 21, length 64
+01:24:39.652534 IP 192.168.0.6.47560 > nsc2.ufrgs.br.domain: Flags [S], seq 2251597722, win 29200, options [mss 1460,sackOK,TS val 2280917566 ecr 0,nop,wscale 7], length 0
+01:24:40.490092 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 22, length 64
+01:24:40.490127 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 22, length 64
+01:24:41.462978 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:41.488411 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 23, length 64
+01:24:41.488452 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 23, length 64
+01:24:41.668518 IP 192.168.0.6.47560 > nsc2.ufrgs.br.domain: Flags [S], seq 2251597722, win 29200, options [mss 1460,sackOK,TS val 2280919582 ecr 0,nop,wscale 7], length 0
+01:24:42.488592 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 24, length 64
+01:24:42.488631 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 24, length 64
+01:24:43.465036 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:43.492942 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 25, length 64
+01:24:43.492981 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 25, length 64
+01:24:43.628105 IP 192.168.0.6.33797 > nsc2.ufrgs.br.domain: 857+ A? ntp.ubuntu.com.ufrgs.br. (41)
+01:24:43.628384 IP 192.168.0.6.57717 > nsc2.ufrgs.br.domain: 45003+ AAAA? ntp.ubuntu.com.ufrgs.br. (41)
+01:24:44.493524 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 26, length 64
+01:24:44.493557 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 26, length 64
+01:24:45.464538 STP 802.1w, Rapid STP, Flags [Learn, Forward], bridge-id 8063.50:04:00:01:00:07.8001, length 42
+01:24:45.495023 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 27, length 64
+01:24:45.495064 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 27, length 64
+01:24:45.924554 IP 192.168.0.6.47560 > nsc2.ufrgs.br.domain: Flags [S], seq 2251597722, win 29200, options [mss 1460,sackOK,TS val 2280923838 ecr 0,nop,wscale 7], length 0
+01:24:46.495808 IP 192.168.0.3 > 192.168.0.6: ICMP echo request, id 4486, seq 28, length 64
+01:24:46.495844 IP 192.168.0.6 > 192.168.0.3: ICMP echo reply, id 4486, seq 28, length 64
